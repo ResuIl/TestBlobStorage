@@ -32,7 +32,7 @@ namespace TestBlobStorage.Services
             }
         }
 
-        public Task<bool> DeleteFileAsync(string fileName)
+        public async Task<bool> DeleteFileAsync(string fileName)
         {
             BlobContainerClient client = new BlobContainerClient(_storageOptions.ConnectionString, _storageOptions.ContainerName);
             BlobClient file = client.GetBlobClient(fileName);
